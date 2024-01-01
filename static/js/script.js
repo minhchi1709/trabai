@@ -20,6 +20,34 @@ function out_back(x) {
     x.src = "../static/images/back1.jpg";
 }
 
+function change_delete(x) {
+    x.src = "../static/images/del4.jpg";
+}
+function out_delete(x) {
+    x.src = "../static/images/del3.jpg";
+}
+
+function change_takedate(x) {
+    x.src = "../static/images/continue4.jpg";
+}
+function out_takedate(x) {
+    x.src = "../static/images/continue3.jpg";
+}
+
+function change_back_del(x) {
+    x.src = "../static/images/back4.jpg";
+}
+function out_back_del(x) {
+    x.src = "../static/images/back3.jpg";
+}
+
+function change_back_delete(x) {
+    x.src = "../static/images/back6.jpg";
+}
+function out_back_delete(x) {
+    x.src = "../static/images/back5.jpg";
+}
+
 function change_del(x) {
     x.src = "../static/images/del2.jpg";
 }

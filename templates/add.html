@@ -2,46 +2,53 @@
 
 <html>
     <head>
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Add new vocabs</title>
         <link href="../static/css/styles.css" rel="stylesheet">
         <style>
             body {
                 font-family: sans-serif;
                 font-size: 30px;
+                width: 100%;
             }
+            
             h1 {
-                position: fixed;
+                position: relative;
                 bottom: 200px;
-                left : 300px;
+                left : 100px;
                 font-size: 50px;
                 font-family: sans-serif;
             }
             
             #h1 {
-                position: fixed;
+                position: relative;
                 top: 20px;
-                left : 650px;
+                left : 450px;
                 font-size: 50px;
                 font-family: sans-serif;
                 color: #ffe3f1;
             }
 
             .main {
-                position: fixed;
+                position: absolute;
                 top: 200px;
-                left : 650px;
+                left : 450px;
+                width: 100%;
             }
 
             input {
                 font-size: 30px;
                 width: 200px;
             }
+
         </style>
     </head>
 
-    <body style="background-image: url('../static/images/add.png'); background-repeat: no-repeat; background-size: cover;">
-        <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+    <body style="background-image: url('../static/images/add.png'); background-size: cover;">
+            <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+            <form action="/" method="get">
+                <button id="buttonbackadd" type="submit"><img src="../static/images/back3.jpg" width="100px" onmouseover="change_back_del(this)" onmouseout="out_back_del(this)"></button>
+            </form>
             <div class="main">
                 <div style="position: relative; left:40px">
                     <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:10px">Day</label></strong>
@@ -68,21 +75,22 @@
                             </div>
                         </li>
                     {% endfor %}
-                        <form action="/add" method="post">
+                <form action="/add" method="post">
                         <li>
                             <div style="position: relative; left:0px">
                                 <input type="text" name="viet" autocomplete="off" autofocus placeholder="Vietnamese" height="30px" class="form-check-input" required>
                                 <input type="text" name="eng" autocomplete="off" autofocus placeholder="English" height="30px" class="form-check-input" required>
                             </div>
                         </li>
+                        <button type="submit" id="buttonadd"></button> 
                 </ol>
-                <button type="submit" id="buttonadd"><img src="../static/images/add1.jpg" width="200px" onmouseover="change_add(this)" onmouseout="out_add(this)"></button> 
                 </form>
+                <form action="/finish" method="post">
+                    <button type="submit" id="buttonfinish"><img src="../static/images/finish1.jpg" width="150px" onmouseover="change_finish(this)" onmouseout="out_finish(this)"></button>
+                </form>
+                
             </div>
-            <form action="/finish" method="post">
-                <button type="submit" id="buttonfinish"><img src="../static/images/finish1.jpg" width="200px" onmouseover="change_finish(this)" onmouseout="out_finish(this)"></button>
-            </form>
-
+            
         <script src="../static/js/script.js"></script>
     </body>
 

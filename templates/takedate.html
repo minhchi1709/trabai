@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <title>Show results</title>
+        <link href="../static/css/styles.css" rel="stylesheet"> 
+        <style>
+            #h1 {
+                position: absolute;
+                top: 40px;
+                left : 150px;
+                font-size: 65px;
+                color: #ed98a5;
+                font-family: sans-serif;
+            }
+
+            .container {
+                font-size: 30px;
+                position: absolute;
+                top: 180px;
+                left:150px;
+                font-family: sans-serif;
+            }
+
+            body {
+                color: #736658;
+            }
+
+        </style>
+    </head>
+
+    <body style="background-image: url('../static/images/delete.jpg'); background-size: cover;">
+        <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+        <div class="container">
+            <form action="/showresults" method="POST">
+                <h1 style="font-size: 45px;">Choose one of the following dates:</h1>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Correct</th>
+                                <th>Total</th>
+                                <th>Score</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for result in results %}
+                            <tr>
+                                <th><label class="form-check-label" for="i1" id="l1">{{result['id']}}</label></th>
+                                <td><label class="form-check-label" for="i1" id="l1">{{result['day']}} / {{result['month']}}</label></td>
+                                <td><label class="form-check-label" for="i1" id="l1">{{result['correct']}}</label></td>
+                                <td><label class="form-check-label" for="i1" id="l1">{{result['total']}}</label></td>
+                                <td><label class="form-check-label" for="i1" id="l1">{{result['score']}}</label></td>
+                                <td><input class="form-check-input" type="radio" id="i1" value="{{result['id']}}" name="choice" checked></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                
+                <button type="submit" id="buttoncontinuetakedate"><img src="../static/images/continue3.jpg" width="200px" onmouseover="change_takedate(this)" onmouseout="out_takedate(this)"></button>
+            </form>
+        </div>
+        <form action="/" method="get">
+            <button id="buttonbackdelete" type="submit"><img src="../static/images/back5.jpg" width="100px" onmouseover="change_back_delete(this)" onmouseout="out_back_delete(this)"></button>
+        </form>
+
+        <script src="../static/js/script.js"></script>
+    </body>
+
+</html>

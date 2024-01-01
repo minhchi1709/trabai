@@ -8,71 +8,63 @@
         <style>
             body {
                 font-family: sans-serif;
-                font-size: 30px;
+                color: #736658;
             }
-            h1 {
-                position: fixed;
-                top: 105px;
-                left : 300px;
-                font-size: 50px;
-                font-family: sans-serif;
-            }
-            
+
             #h1 {
-                position: fixed;
-                top: 20px;
-                left : 650px;
-                font-size: 50px;
-                font-family: sans-serif;
-                color: #ffe3f1;
+                position: absolute;
+                top: 40px;
+                left : 150px;
+                font-size: 65px;
+                color: #ed98a5;
             }
 
-            input {
+            .container {
                 font-size: 30px;
-                width: 200px;
-            }
-            table {
-                padding: 5px 5px 5px 5px;
-                width: 600px;
-                position: fixed;
-                top: 250px;
-                left : 550px;
-                text-align: center;
+                position: absolute;
+                top: 180px;
+                left:150px;
             }
 
-            
+            .container{
+                top:200px;
+                left:120px;
+                max-width: 900px;
+            }
         </style>
     </head>
 
-    <body style="background-image: url('../static/images/add.png'); background-repeat: no-repeat; background-size: cover;">
+    <body style="background-image: url('../static/images/delete.jpg'); background-size: cover;">
         <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
-        <h1>The date {{day}}/{{month}} contains following contents:</h1>
-        <form action="/" method="get">
-            <button id="buttonback" type="submit"><img src="../static/images/back1.jpg" width="100px" onmouseover="change_back(this)" onmouseout="out_back(this)"></button>
+        <div class="container">
+            <h1 style="font-size: 45px;">The date {{day}}/{{month}} contains following contents:</h1>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th style="width: 30px"><strong>#</strong></th>
+                        <th><strong>Vietnamese</strong></th>
+                        <th><strong>English</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for vocab in vocabs %}
+                            <tr>
+                                <th scope="row" style="width: 30px">{{vocab['num']}}</th>
+                                <td>{{vocab['viet']}}</td>
+                                <td>{{vocab['eng']}}</td>
+                            </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <form action="/" method="post">
+            <input type="hidden" name="choice" value="3">
+            <button type="submit" id="buttonbackdelete"><img src="../static/images/back5.jpg" width="100px" onmouseover="change_back_delete(this)" onmouseout="out_back_delete(this)"></button>
         </form>
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th style="width: 30px"><strong>#</strong></th>
-                            <th><strong>Vietnamese</strong></th>
-                            <th><strong>English</strong></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            {% for vocab in vocabs %}
-                                <tr>
-                                    <th scope="row" style="width: 30px">{{vocab['num']}}</th>
-                                    <td>{{vocab['viet']}}</td>
-                                    <td>{{vocab['eng']}}</td>
-                                </tr>
-                            {% endfor %}
-                    </tbody>
-                </table>
-                </form>
-
-            <form action="/deletedata" method="post">
-                <button type="submit" id="buttondel"><img src="../static/images/del1.jpg" width="200px" onmouseover="change_del(this)" onmouseout="out_del(this)"></button>
-            </form>
+                
+        <form action="/deletedata" method="post">
+            <button type="submit" id="buttondelete"><img src="../static/images/del3.jpg" width="130px" onmouseover="change_delete(this)" onmouseout="out_delete(this)"></button>
+        </form>
 
         <script src="../static/js/script.js"></script>
     </body>

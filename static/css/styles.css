@@ -3,20 +3,35 @@
     border: none;
     background-color: #FFEDDF;
     bottom: 50px;
-    left : 850px;
+    left : 650px;
 }
 
 #buttoncontinue {
-    position: fixed;
+    position: sticky;
     border: none;
     background-color: #EAE7E0;
-    bottom: 50px;
-    left : 1050px;
+    bottom: 1%;
+    left: 950px;
+}
+
+#buttoncontinueresults {
+    position: sticky;
+    border: none;
+    background-color: #EAE7E0;
+    left: 960px;
 }
 
 #buttonback {
     background-color: #EAE7E0;
-    position: fixed;
+    position: sticky;
+    border: none;
+    bottom: 100px;
+    left: 10px;
+}
+
+#buttonbackadd {
+    background-color: #dbc6b1;
+    position: sticky;
     border: none;
     top: 10px;
     left: 10px;
@@ -32,24 +47,67 @@
 
 #buttondel{
     background-color: #dbc6b1;
-    position: fixed;
+    position: absolute;
     right : 100px;
-    bottom: 400px;
+    bottom: 410px;
     border: none;
 }
 
 #buttonadd{
     background-color: #dbc6b1;
-    position: fixed;
+    position: sticky;
     border: none;
-    right: 10px;
-    bottom: 400px;
+    width: 100px;
+    left: 1000px;
+    top: 0px;
 }
 
 #buttonfinish{
     background-color: #dbc6b1;
-    position: fixed;
+    position: sticky;
     border: none;
-    right: 10px;
-    bottom: 300px;
+    left: 1050px;
+}
+
+#buttondelete{
+    background-color: #f9eddc;
+    position: absolute;
+    right : 420px;
+    bottom: 20px;
+    border: none;
+}
+
+#buttonbackdelete{
+    background-color: #f9eddc;
+    position: absolute;
+    border: none;
+    top: 10px;
+    left: 10px;
+}
+
+#buttoncontinuetakedate {
+    background-color: #f9eddc;
+    position: sticky;
+    border: none;
+    left: 1200px;
+}
+
+.correct{
+    background-color: green;
+    width: 200px;
+}
+
+.incorrect {
+    background-color: red;
+    width: 200px
+}
+
+input {
+    font-size: 30px;
+}
+
+td, th {
+    padding-left: 20px ;
+    padding-right: 20px ;
+    text-align: center;
 }

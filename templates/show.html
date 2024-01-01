@@ -8,65 +8,54 @@
         <style>
             body {
                 font-family: sans-serif;
-                color: #3e4879;
-            }
-            h1 {
-                position: fixed;
-                top: 100px;
-                left : 400px;
-                font-size: 50px;
-                text-align: center;
+                color: #736658;
             }
 
             #h1 {
-                position: fixed;
-                top: 0;
-                left : 650px;
-                font-size: 50px;
-                color: pink;
+                position: absolute;
+                top: 40px;
+                left : 150px;
+                font-size: 65px;
+                color: #ed98a5;
             }
 
-            #div1 {
-                position: fixed;
-                top: 300px;
-                left: 450px;
+            .container {
                 font-size: 30px;
+                position: absolute;
+                top: 180px;
+                left:150px;
             }
 
             input {
                 font-size: 30px;
             }
 
-            div {
-                position: fixed;
-                top: 300px;
-                left: 450px;
-                font-size: 30px;
-            }
-
         </style>
     </head>
 
-    <body style="background-image: url('../static/images/test.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <body style="background-image: url('../static/images/delete.jpg'); background-repeat: no-repeat; background-size: cover;">
         <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+        
+        <div class="container">
+            <form action="/show" method="post">
+                <h1 style="font-size: 40px;">Choose which date below you want to delete:</h1>
+                <div>
+                    <ol>
+                        {% for date in dates %}
+                            <li>
+                                <input class="form-check-input" type="radio" id="i1" value="{{date[0]}}/{{date[1]}}" name="choice" checked>
+                                <label class="form-check-label" for="i1" id="l1">{{date[0]}}/{{date[1]}}</label>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <button type="submit" id="buttoncontinuetakedate"><img src="../static/images/continue3.jpg" width="200px" onmouseover="change_takedate(this)" onmouseout="out_takedate(this)"></button>
+            </form>
+        </div>
         <form action="/" method="get">
-            <button id="buttonback" type="submit"><img src="../static/images/back1.jpg" width="100px" onmouseover="change_back(this)" onmouseout="out_back(this)"></button>
+            <button id="buttonbackdelete" type="submit"><img src="../static/images/back5.jpg" width="100px" onmouseover="change_back_delete(this)" onmouseout="out_back_delete(this)"></button>
         </form>
-        <form action="/show" method="post">
-            <h1>Choose which date below you want to delete:</h1>
-            <div>
-                <ol>
-                    {% for date in dates %}
-                        <li>
-                            <input class="form-check-input" type="radio" id="i1" value="{{date[0]}}/{{date[1]}}" name="choice" checked>
-                            <label class="form-check-label" for="i1" id="l1">{{date[0]}}/{{date[1]}}</label>
-                        </li>
-                    {% endfor %}
-                </ol>
-            </div>
-            <button type="submit" id="buttoncontinue"><img src="../static/images/continue1.jpg" width="200px" onmouseover="change_test(this)" onmouseout="out_test(this)"></button>
-        </form>
-
+        
         <script src="../static/js/script.js">
 
         </script>
