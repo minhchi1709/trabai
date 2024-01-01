@@ -1,2 +1,2 @@
 pip install -r requirements.txt | 
-flask --ap app run
+flask --app app run
