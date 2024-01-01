@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <title>Tra bai cho be iu</title>
+        
+        <link href="../static/css/styles.css" rel="stylesheet"> 
+        <style>
+            h1 {
+                position: fixed;
+                bottom: 200px;
+                left : 650px;
+                font-size: 50px;
+                font-family: sans-serif;
+            }
+
+            #i1 {
+                border: none;
+                position: fixed;
+                bottom: 180px;
+                left : 550px; 
+                width: 100px;
+                
+            }
+
+            #l1 {
+                border: none;
+                position: fixed;
+                bottom: 175px;
+                left : 620px; 
+                font-family: sans-serif;
+                font-size: 25px;
+            }
+
+            #i2 {
+                border: none;
+                position: fixed;
+                bottom: 180px;
+                left : 800px;
+                width: 100px;
+            }
+
+            #l2 {
+                border: none;
+                position: fixed;
+                bottom: 175px;
+                left : 870px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 25px;
+            }
+
+            #i3 {
+                border: none;
+                position: fixed;
+                bottom: 180px;
+                left : 1100px;
+                width: 100px;
+            }
+
+            #l3 {
+                border: none;
+                position: fixed;
+                bottom: 175px;
+                left : 1170px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 25px;
+            }
+
+            #h1 {
+                position: fixed;
+                top: 220px;
+                left : 650px;
+                font-size: 50px;
+                font-family: sans-serif;
+                color: pink;
+            }
+
+           
+        </style>
+    </head>
+
+    <body style="background-image: url('../static/images/homepage.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+        <form action="/" method="post">
+            <h1>Choose following options:</h1>
+                <input class="form-check-input" type="radio" id="i1" value="1" name="choice" checked>
+                <label class="form-check-label" for="i1" id="l1">Vocabulary test</label>
+
+                <input class="form-check-input" type="radio" id="i2" value="2" name="choice">
+                <label class="form-check-label" for="i2" id="l2">Adding new vocabs</label>
+
+                <input class="form-check-input" type="radio" id="i3" value="3" name="choice">
+                <label class="form-check-label" for="i3" id="l3">Delete data</label>
+                <div><button type="submit" id="buttonenter"><img src="../static/images/enter.jpg" width="200px" onmouseover="change_index(this)" onmouseout="out_index(this)"></button></div>
+        </form>
+
+        <script src="../static/js/script.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,55 @@
+#buttonenter {
+    position: fixed;
+    border: none;
+    background-color: #FFEDDF;
+    bottom: 50px;
+    left : 850px;
+}
+
+#buttoncontinue {
+    position: fixed;
+    border: none;
+    background-color: #EAE7E0;
+    bottom: 50px;
+    left : 1050px;
+}
+
+#buttonback {
+    background-color: #EAE7E0;
+    position: fixed;
+    border: none;
+    top: 10px;
+    left: 10px;
+}
+
+.buttondel{
+    background-color: #dbc6b1;
+    position: relative;
+    left : 420px;
+    top: -35px;
+    border: none;
+}
+
+#buttondel{
+    background-color: #dbc6b1;
+    position: fixed;
+    right : 100px;
+    bottom: 400px;
+    border: none;
+}
+
+#buttonadd{
+    background-color: #dbc6b1;
+    position: fixed;
+    border: none;
+    right: 10px;
+    bottom: 400px;
+}
+
+#buttonfinish{
+    background-color: #dbc6b1;
+    position: fixed;
+    border: none;
+    right: 10px;
+    bottom: 300px;
+}

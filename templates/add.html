@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <title>Add new vocabs</title>
+        <link href="../static/css/styles.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: sans-serif;
+                font-size: 30px;
+            }
+            h1 {
+                position: fixed;
+                bottom: 200px;
+                left : 300px;
+                font-size: 50px;
+                font-family: sans-serif;
+            }
+            
+            #h1 {
+                position: fixed;
+                top: 20px;
+                left : 650px;
+                font-size: 50px;
+                font-family: sans-serif;
+                color: #ffe3f1;
+            }
+
+            .main {
+                position: fixed;
+                top: 200px;
+                left : 650px;
+            }
+
+            input {
+                font-size: 30px;
+                width: 200px;
+            }
+        </style>
+    </head>
+
+    <body style="background-image: url('../static/images/add.png'); background-repeat: no-repeat; background-size: cover;">
+        <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+            <div class="main">
+                <div style="position: relative; left:40px">
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:10px">Day</label></strong>
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:165px">Month</label></strong>
+                </div>
+                <div style="position: relative; left:40px">
+                    <input type="button" class="form-check-input" name="day" autocomplete="off" autofocus placeholder="Day" height="30px" value="{{day}}">
+                    <input type="button" class="form-check-input" name="month" autocomplete="off" autofocus placeholder="Month" height="30px" value="{{month}}">
+                </div>
+                <div style="position: relative; left:40px">
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:10px">Vietnamese</label></strong>
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:55px">English</label></strong>
+                </div>
+                <ol>
+                    {% for vocab in vocabs %}
+                        <li>
+                            <div style="position: relative; left:0px">
+                                <input type="button" value="{{vocab['viet']}}" class="form-check-input">
+                                <input type="button" value="{{vocab['eng']}}" class="form-check-input">
+                                <form action="/delete" method="post">
+                                    <input type="hidden" value="{{vocab['eng']}}" name="delete">
+                                    <button type="submit" class="buttondel"><img src="../static/images/del1.jpg" height="30px" onmouseover="change_del(this)" onmouseout="out_del(this)"></button>
+                                </form>
+                            </div>
+                        </li>
+                    {% endfor %}
+                        <form action="/add" method="post">
+                        <li>
+                            <div style="position: relative; left:0px">
+                                <input type="text" name="viet" autocomplete="off" autofocus placeholder="Vietnamese" height="30px" class="form-check-input" required>
+                                <input type="text" name="eng" autocomplete="off" autofocus placeholder="English" height="30px" class="form-check-input" required>
+                            </div>
+                        </li>
+                </ol>
+                <button type="submit" id="buttonadd"><img src="../static/images/add1.jpg" width="200px" onmouseover="change_add(this)" onmouseout="out_add(this)"></button> 
+                </form>
+            </div>
+            <form action="/finish" method="post">
+                <button type="submit" id="buttonfinish"><img src="../static/images/finish1.jpg" width="200px" onmouseover="change_finish(this)" onmouseout="out_finish(this)"></button>
+            </form>
+
+        <script src="../static/js/script.js"></script>
+    </body>
+
+</html>

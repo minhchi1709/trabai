@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <title>Add new vocabs</title>
+        <link href="../static/css/styles.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: sans-serif;
+                font-size: 30px;
+            }
+            h1 {
+                position: fixed;
+                bottom: 200px;
+                left : 300px;
+                font-size: 50px;
+                font-family: sans-serif;
+            }
+            form {
+                position: fixed;
+                top: 200px;
+                left : 650px;
+            }
+
+            #b1{
+                border: none;
+                position: fixed;
+                bottom: 100px;
+                left : 800px;              
+            }
+
+            #b2{
+                border: none;
+                position: fixed;
+                bottom: 100px;
+                left : 1020px;
+            }
+
+            #i1, #i2 {
+                width: 100px;
+            }
+
+            #h1 {
+                position: fixed;
+                top: 20px;
+                left : 650px;
+                font-size: 50px;
+                font-family: sans-serif;
+                color: #ffe3f1;
+            }
+            input {
+                font-size: 30px;
+                width: 200px;
+            }
+        </style>
+    </head>
+
+    <body style="background-image: url('../static/images/add.png'); background-repeat: no-repeat; background-size: cover;">
+        <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+            <form action="/add" method="post">
+                <div style="position: relative; left:40px">
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:10px" >Day</label></strong>
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:165px" >Month</label></strong>
+                </div>
+                <div style="position: relative; left:40px">
+                    <input type="number" min="1" max="31" step="1" name="day" autocomplete="off" autofocus placeholder="Day" height="30px" required>
+                    <input type="number" min="1" max="12" step="1" name="month" autocomplete="off" autofocus placeholder="Month" height="30px" required>
+                </div>
+                <div style="position: relative; left:40px">
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:10px">Vietnamese</label></strong>
+                    <strong><label class="form-check-label" for="i1" id="l1" style="position: relative; left:55px">English</label></strong>
+                </div>
+                <ol>
+                    <li>
+                        <div>
+                            <input type="text" name="viet" autocomplete="off" autofocus placeholder="Vietnamese" height="30px" required>
+                            <input type="text" name="eng" autocomplete="off" autofocus placeholder="English" height="30px" required>
+                        </div>
+                    </li>
+                </ol>
+                <button type="submit" id="buttonadd"><img src="../static/images/add1.jpg" width="200px" onmouseover="change_add(this)" onmouseout="out_add(this)"></button>
+                <button type="submit" id="buttonfinish"><img src="../static/images/finish1.jpg" width="200px" onmouseover="change_finish(this)" onmouseout="out_finish(this)"></button>
+            </form>
+
+        <script src="../static/js/script.js"></script>
+    </body>
+
+</html>
