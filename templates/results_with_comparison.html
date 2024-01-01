@@ -26,7 +26,7 @@
             .container {
                 font-size: 30px;
                 position: absolute;
-                left: 300px;
+                left: 100px;
                 top: 150px;
                 width: 1000px;
             }
@@ -34,6 +34,7 @@
             th, td {
                 padding-left: 20px;
                 padding-right: 20px;
+                max-width: 300px;
             }
         </style>
     </head>
@@ -45,12 +46,13 @@
         </form>
         <div class="container">
             <form action="/test" method="get">
-                <h1 style="font-size: 45px;">Here are your answers:</h1>
+                <h1 style="font-size: 45px;">{{announcement}}</h1>
                         <table class="table table-sm">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Your Answer</th>
+                                    <th>Last Answer</th>
                                     <th>Vietnamese</th>
                                     <th>Correct Answer</th>
                                 </tr>
@@ -62,9 +64,16 @@
                                         <th><strong>{{answer['num']}}</strong></th>
                                         <td>
                                             {% if answer['answer'] == answer['eng'] %}
-                                            <input class="form-check-input" type="button" value="{{answer['answer']}}" style="background-color: green; width:100px">
+                                            <input class="correct" type="button" value="{{answer['answer']}}">
                                             {% else %}
-                                            <input class="form-check-input" type="button" value="{{answer['answer']}}" style="background-color: red; width:100px">
+                                            <input class="incorrect" type="button" value="{{answer['answer']}}">
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if answer['last_answer'] == answer['eng'] %}
+                                            <input class="correct" type="button" value="{{answer['last_answer']}}"">
+                                            {% else %}
+                                            <input class="incorrect" type="button" value="{{answer['last_answer']}}">
                                             {% endif %}
                                         </td>
                                         <td>
@@ -73,10 +82,18 @@
                                         <td>{{answer['eng']}}</td>
                                     </tr>  
                                 {% endfor %}
+                                <tr>
+                                    <td></td>
+                                    <th><strong>Result:</strong></th>
+                                    <th><strong>{{correct}} / {{total}}</strong></th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <th><strong>Last Result:</strong></th>
+                                    <th><strong>{{last_correct}} / {{total}}</strong></th>
+                                </tr>
                             </tbody>
                         </table>
-                    <strong>Result: {{correct}} / {{total}}</strong>
-       
                 <button type="submit" id="buttoncontinueresults"><img src="../static/images/continue1.jpg" width="150px" onmouseover="change_test(this)" onmouseout="out_test(this)"></button>
             </form>
         </div>
