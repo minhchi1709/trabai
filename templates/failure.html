@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <title>Tra bai cho be iu</title>
+        
+        <link href="../static/css/styles.css" rel="stylesheet"> 
+        <style>
+            #h2 {
+                position: fixed;
+                bottom: 200px;
+                left : 550px;
+                font-size: 50px;
+                font-family: sans-serif;
+            }
+
+            #h3 {
+                position: fixed;
+                bottom: 130px;
+                left : 550px;
+                font-size: 50px;
+                font-family: sans-serif;
+            }
+
+            #h1 {
+                position: fixed;
+                top: 220px;
+                left : 650px;
+                font-size: 50px;
+                font-family: sans-serif;
+                color: pink;
+            }
+
+           
+        </style>
+    </head>
+
+    <body style="background-image: url('../static/images/homepage.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <h1 id="h1">Ur yeobo made this for u &#9829;</h1>
+        <form action="/" method="get">
+            <h1 id="h2">Seems like you just made a mistake.</h1>
+            <h1 id="h3">Press enter to go back to main page</h1>
+                <div><button type="submit" id="buttonenter"><img src="../static/images/enter.jpg" width="200px" onmouseover="change_index(this)" onmouseout="out_index(this)"></button></div>
+        </form>
+
+        <script src="../static/js/script.js"></script>
+    </body>
+
+</html>
