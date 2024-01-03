@@ -131,9 +131,9 @@ def test():
                     id, current_day, current_month, answer['eng'], answer['viet'], answer['answer'])
         else:
             id = db.execute("SELECT id FROM results WHERE day = ? AND month = ?", current_day, current_month)[0]['id']
-            print(id)
+            
             last_test = db.execute("SELECT eng, answer FROM tests WHERE id = ?", id)
-            print(last_test)
+            
             for answer in answers:
                 for row in last_test:
                     if answer['eng'] == row['eng']:
@@ -227,7 +227,7 @@ def add():
             current_month = month
         viet = request.form.get('viet')
         eng = request.form.get('eng')
-        vocabs_add.append({'viet':viet, 'eng':eng})
+        vocabs_add.insert(0, {'viet':viet, 'eng':eng})
         return render_template("add.html", vocabs = vocabs_add, day = current_day, month = current_month)  
     vocabs_add = []
     return render_template("add.html", vocabs = vocabs_add, day = current_day, month = current_month)
@@ -237,6 +237,8 @@ def addfirst():
     global vocabs_add
     global current_day
     global current_month
+    if len(vocabs_add) != 0:
+        return render_template("add.html", vocabs = vocabs_add, day = current_day, month = current_month)
     current_day = 0
     current_month = 0
     vocabs_add == []
