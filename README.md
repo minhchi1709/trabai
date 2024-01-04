@@ -1,2 +1,7 @@
-pip install -r requirements.txt \n| 
-flask --app app run
+pip install -r requirements.txt | 
+flask --app app run |
+
+
+git add vocab.db
+git commit -m 'Update database'
+git push
