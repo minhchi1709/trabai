@@ -10,3 +10,5 @@ git commit -m 'Update database'
 
 
 git push
+
+git pull
