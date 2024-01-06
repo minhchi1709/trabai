@@ -31,7 +31,7 @@
 
 #buttonbackadd {
     background-color: #dbc6b1;
-    position: sticky;
+    position: absolute;
     border: none;
     top: 10px;
     left: 10px;
@@ -40,7 +40,7 @@
 .buttondel{
     background-color: #dbc6b1;
     position: relative;
-    left : 420px;
+    left : 620px;
     top: -35px;
     border: none;
 }
@@ -64,9 +64,10 @@
 
 #buttonfinish{
     background-color: #dbc6b1;
-    position: sticky;
+    position: fixed;
     border: none;
-    left: 1050px;
+    top: 10px;
+    right: 10px;
 }
 
 #buttondelete{
